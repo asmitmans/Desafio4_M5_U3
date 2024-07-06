@@ -68,21 +68,21 @@
 	<script src="https://cdn.datatables.net/2.0.8/js/dataTables.min.js"></script>
 	<script>
 		$(document).ready(() => {
-	        $('#tblProveedor').DataTable({
-	            "order": [[1, 'asc']] // Ordenar por la segunda columna (Nombre) de manera ascendente
-	        });
-	    });
-    </script>
-     
-    <script>
-        window.onload = function() {
-            if (window.location.search.indexOf('mensaje=') !== -1) {
-                // Remover el parámetro 'mensaje' de la URL sin recargar la página
-                const url = new URL(window.location);
-                url.searchParams.delete('mensaje');
-                window.history.replaceState({}, document.title, url);
-            }
-        };
-    </script>
+			$('#tblProveedor').DataTable({
+				"order": [[1, 'asc']] // Ordenar por la segunda columna (Nombre) de manera ascendente
+			});
+		});
+	</script>
+	
+	<script>
+		window.onload = function() {
+			if (window.location.search.indexOf('mensaje=') !== -1) {
+				// Remover el parámetro 'mensaje' de la URL sin recargar la página
+				const url = new URL(window.location);
+				url.searchParams.delete('mensaje');
+				window.history.replaceState({}, document.title, url);
+			}
+		};
+	</script>
 </body>
 </html>
