@@ -1,21 +1,21 @@
 package cl.fullstackjava.model.dto;
 
 public class Proveedor {
-	int id;
-	String nombre;
-	String rut;
-	String direccion;
-	String correo;
-	String telefono;
-	String contacto;
-	String telefonoContacto;
+	private int id;
+	private String nombre;
+	private String rut;
+	private String direccion;
+	private String correo;
+	private String telefono;
+	private String contacto;
+	private String telefonoContacto;
 	
 	public Proveedor() {
 		super();
 	}
-		
-	public Proveedor(String nombre, String rut, String direccion, String correo, String telefono,
-			String contacto, String telefonoContacto) {
+
+	public Proveedor(String nombre, String rut, String direccion, String correo, String telefono, String contacto,
+			String telefonoContacto) {
 		super();
 		this.nombre = nombre;
 		this.rut = rut;
@@ -24,8 +24,8 @@ public class Proveedor {
 		this.telefono = telefono;
 		this.contacto = contacto;
 		this.telefonoContacto = telefonoContacto;
-	}	
-		
+	}
+
 	public Proveedor(int id, String nombre, String rut, String direccion, String correo, String telefono,
 			String contacto, String telefonoContacto) {
 		super();
@@ -102,4 +102,5 @@ public class Proveedor {
 	public void setTelefonoContacto(String telefonoContacto) {
 		this.telefonoContacto = telefonoContacto;
 	}
+
 }

@@ -17,10 +17,10 @@ import cl.fullstackjava.model.dto.Proveedor;
 public class CrearProveedorController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
-    public CrearProveedorController() {
-        super();
-    }
-
+	public CrearProveedorController() {
+		super();
+	}
+	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		// Leer Parametros
@@ -34,8 +34,8 @@ public class CrearProveedorController extends HttpServlet {
 			
 		// Validar que la información ingresada en el formulario no sean null o vacío.
 		if (isNullOrEmpty(nombre) || isNullOrEmpty(rut) || isNullOrEmpty(direccion) ||
-	        isNullOrEmpty(correo) || isNullOrEmpty(telefono) || isNullOrEmpty(contacto) ||
-	        isNullOrEmpty(telefonoContacto)) {
+				isNullOrEmpty(correo) || isNullOrEmpty(telefono) || isNullOrEmpty(contacto) ||
+				isNullOrEmpty(telefonoContacto)) {
 			
 			request.setAttribute("error", "Todos los campos son obligatorios.");
 			request.getRequestDispatcher("/views/crearProveedor.jsp").forward(request, response);
@@ -46,19 +46,18 @@ public class CrearProveedorController extends HttpServlet {
 		ProveedorDAO aDAO = new ProveedorDAOImp();
 		String mensaje = aDAO.create(new Proveedor(nombre,rut,direccion,correo,telefono,contacto,telefonoContacto));
 		
-				
 		// Redirigir con el mensaje como parámetro de consulta
 		// NOTA: Patrón PRG 
-	    response.sendRedirect(request.getContextPath() + "?mensaje=" + URLEncoder.encode(mensaje, "UTF-8"));
-
+		response.sendRedirect(request.getContextPath() + "?mensaje=" + URLEncoder.encode(mensaje, "UTF-8"));
+		
 	}
-
+	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		getServletContext().getRequestDispatcher("/views/crearProveedor.jsp").forward(request, response);
 	}
 	
 	private boolean isNullOrEmpty(String str) {
-        return str == null || str.trim().isEmpty();
-    }
-
+		return str == null || str.trim().isEmpty();
+	}
+	
 }

@@ -18,11 +18,10 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet("/")
 public class ProveedorController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-    public ProveedorController() {
-        super();
-    }
-
+	
+	public ProveedorController() {
+		super();
+	}
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
@@ -32,9 +31,9 @@ public class ProveedorController extends HttpServlet {
 		getServletContext().getRequestDispatcher("/views/index.jsp").forward(request, response);
 		
 	}
-
+	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		doGet(request, response);
 	}
-
+	
 }
