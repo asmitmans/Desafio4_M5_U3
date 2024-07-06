@@ -31,6 +31,7 @@
 		<table class="table table-dark table-striped" id="tblProveedor">
 			<thead>
 				<tr>
+					<th>Id</th>
 					<th>Nombre</th>
 					<th>RUT</th>
 					<th>Dirección</th>
@@ -43,13 +44,14 @@
 			<tbody>
 				<c:forEach var="p" items="${proveedores}">
 					<tr>
-						<td><c:out value="${p.nombre}" /></td>
-						<td><c:out value="${p.rut}" /></td>
-						<td><c:out value="${p.direccion}" /></td>
-						<td><c:out value="${p.correo}" /></td>
-						<td><c:out value="${p.telefono}" /></td>
-						<td><c:out value="${p.contacto}" /></td>
-						<td><c:out value="${p.telefonoContacto}" /></td>
+						<td><c:out value="${p.getId()}" /></td>
+						<td><c:out value="${p.getNombre()}" /></td>
+						<td><c:out value="${p.getRut()}" /></td>
+						<td><c:out value="${p.getDireccion()}" /></td>
+						<td><c:out value="${p.getCorreo()}" /></td>
+						<td><c:out value="${p.getTelefono()}" /></td>
+						<td><c:out value="${p.getContacto()}" /></td>
+						<td><c:out value="${p.getTelefonoContacto()}" /></td>
 					</tr>
 				</c:forEach>
 			</tbody>
@@ -65,9 +67,11 @@
 		crossorigin="anonymous"></script>
 	<script src="https://cdn.datatables.net/2.0.8/js/dataTables.min.js"></script>
 	<script>
-        $(document).ready(() => {
-            $('#tblProveedor').DataTable();
-        });
+		$(document).ready(() => {
+	        $('#tblProveedor').DataTable({
+	            "order": [[1, 'asc']] // Ordenar por la segunda columna (Nombre) de manera ascendente
+	        });
+	    });
     </script>
      
     <script>
